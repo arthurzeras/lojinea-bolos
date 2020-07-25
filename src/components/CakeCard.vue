@@ -1,23 +1,53 @@
 <template>
-  <div class="card cake-card">
-    <div class="card-image">
-      <figure class="image">
-        <img :src="cake.image" alt="Placeholder image">
-      </figure>
-    </div>
-    <div class="card-content" :title="cake.name">
-      <div class="media">
-        <div class="media-content">
-          <p class="title is-6">{{ cake.name }}</p>
-          <p class="subtitle is-4">{{ cake.price | price }}</p>
+  <div>
+    <div class="card cake-card">
+      <div class="card-image">
+        <figure class="image">
+          <img :src="cake.image" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content" :title="cake.name">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-6">{{ cake.name }}</p>
+            <p class="subtitle is-4">{{ cake.price | price }}</p>
+          </div>
+        </div>
+
+        <div class="content">
+          <button class="button is-primary is-rounded" @click="addToBasket()">
+            Adicionar a cesta
+          </button>
         </div>
       </div>
+    </div>
 
-      <div class="content">
-        <button class="button is-primary is-rounded" @click="addToBasket()">
-          Adicionar a cesta
-        </button>
-      </div>
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image">
+            <img :src="cake.image" alt="Image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>{{ cake.name }}</strong>
+            </p>
+
+            <div class="columns is-mobile">
+              <div class="column is-size-4 is-size-5-mobile">
+                {{ cake.price | price }}
+              </div>
+              <div class="column is-one-quarter-tablet is-two-quarter-mobile has-text-right">
+                <div class="button is-primary" @click="addToBasket()">
+                  <img src="@/assets/img/cesta.svg" width="20" alt="cesta">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </template>
@@ -45,7 +75,14 @@ export default {
 
   methods: {
     addToBasket() {
-      Store.mutations.MutateBasketList(this.cake);
+      Store.mutations.MutateInsertionBasketList(this.cake);
+
+      const notification = {
+        visible: true,
+        message: `${this.cake.name} adicionado à sacola`,
+      };
+
+      Store.mutations.MutateNotification(notification);
     },
   },
 };
@@ -59,6 +96,40 @@ export default {
     img {
       height: 100%;
       object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+}
+
+.box {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .cake-card {
+    display: none;
+  }
+
+  .box {
+    display: block;
+
+    .media-left {
+      .image {
+        width: 64px;
+        height: 64px;
+
+        img {
+          border-radius: 10px;
+        }
+      }
+    }
+
+    .media-content {
+      overflow: hidden;
+      .content {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
     }
   }
 }

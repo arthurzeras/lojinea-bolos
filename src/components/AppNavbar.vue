@@ -34,7 +34,10 @@ export default {
 
   computed: {
     basketItemsCount() {
-      return Store.state.basketList.length;
+      return Store.state.basketList.reduce((total, cake) => {
+        const tot = total + cake.quantity;
+        return tot;
+      }, 0);
     },
   },
 

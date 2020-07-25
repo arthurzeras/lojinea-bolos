@@ -14,8 +14,12 @@
     </article>
 
     <article class="container mt-2 mb-2">
-      <div class="columns">
-        <div class="column" v-for="cake in cakesList" :key="cake.id">
+      <div class="columns is-mobile is-multiline">
+        <div
+          :key="cake.id"
+          v-for="cake in cakesList"
+          class="column is-one-quarter-desktop is-half-tablet is-full-mobile"
+        >
           <cake-card :cake="cake" />
         </div>
       </div>
@@ -40,5 +44,9 @@ export default {
 .home {
   overflow-y: auto;
   height: calc(100vh - 168px);
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
 }
 </style>

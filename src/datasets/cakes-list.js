@@ -23,4 +23,10 @@ export default [
     id: '8ee4d1edf3e382c08935ac5b7623a2ba7c43ecfb',
     image: 'https://preview.redd.it/leels9jfoac51.jpg?width=640&crop=smart&auto=webp&s=597b10143d6837947476521c13f5efa6435635ea',
   },
+  {
+    price: 38.99,
+    name: 'Rosas',
+    id: '23b9e35ffa5dc691ff587e9459ce0d893f2888dd',
+    image: 'https://preview.redd.it/wvxlvu5yygc51.jpg?width=640&crop=smart&auto=webp&s=46d95f71365541016cc8d7e6416c55d1703b44df',
+  },
 ];
