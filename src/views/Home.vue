@@ -20,10 +20,30 @@
           v-for="cake in cakesList"
           class="column is-one-quarter-desktop is-half-tablet is-full-mobile"
         >
-          <cake-card :cake="cake" />
+          <cake-card ref="cakeCard" :cake="cake" @showImage="showImage($event)" />
         </div>
       </div>
     </article>
+
+    <div class="modal" :class="{ 'is-active': modal.visible }">
+      <div class="modal-background" @click="modal.visible = false"></div>
+      <div class="modal-content">
+        <p class="image">
+          <img :src="modal.cake.image" :alt="modal.cake.name">
+        </p>
+
+        <p class="has-text-centered pt-5">
+          <button class="button is-primary mr-4" @click="addToBasket()">
+            Adicionar à sacola
+          </button>
+
+          <a :href="modal.cake.post" target="_blank" class="button is-dark">
+            Ver original
+          </a>
+        </p>
+      </div>
+      <button class="modal-close is-large"  @click="modal.visible = false"></button>
+    </div>
   </section>
 </template>
 
@@ -36,7 +56,29 @@ export default {
 
   components: { CakeCard },
 
-  data: () => ({ cakesList }),
+  data: () => ({
+    cakesList,
+    modal: {
+      cake: {},
+      visible: false,
+    },
+  }),
+
+  methods: {
+    showImage(cake) {
+      this.modal.cake = cake;
+      this.modal.visible = true;
+    },
+
+    addToBasket() {
+      const component = Array.from(this.$refs.cakeCard)
+        .find(({ cake }) => cake.id === this.modal.cake.id);
+
+      component.addToBasket();
+
+      this.modal.visible = false;
+    },
+  },
 };
 </script>
 
@@ -47,6 +89,17 @@ export default {
   .container {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+  }
+
+  .modal {
+    .modal-content {
+      .image {
+        img {
+          object-fit: contain;
+          max-height: calc(100vh - 224px);
+        }
+      }
+    }
   }
 }
 </style>

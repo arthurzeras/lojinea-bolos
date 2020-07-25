@@ -2,11 +2,9 @@
   <div>
     <div class="card cake-card">
       <div class="card-image">
-        <a :href="cake.post" target="_blank">
-          <figure class="image">
-            <img :src="cake.image" alt="Placeholder image">
-          </figure>
-        </a>
+        <figure class="image" @click="showImage()">
+          <img :src="cake.image" alt="Placeholder image">
+        </figure>
       </div>
       <div class="card-content" :title="cake.name">
         <div class="media">
@@ -27,11 +25,9 @@
     <div class="box">
       <article class="media">
         <div class="media-left">
-          <a :href="cake.post" target="_blank">
-            <figure class="image">
-              <img :src="cake.image" alt="Image">
-            </figure>
-          </a>
+          <figure class="image" @click="showImage()">
+            <img :src="cake.image" alt="Image">
+          </figure>
         </div>
         <div class="media-content">
           <div class="content">
@@ -89,8 +85,8 @@ export default {
       Store.mutations.MutateNotification(notification);
     },
 
-    redirectToRedditPost() {
-      window.open(this.cake.post, '_blank');
+    showImage() {
+      this.$emit('showImage', this.cake);
     },
   },
 };
@@ -128,6 +124,8 @@ export default {
         height: 64px;
 
         img {
+          height: 100%;
+          object-fit: cover;
           border-radius: 10px;
         }
       }

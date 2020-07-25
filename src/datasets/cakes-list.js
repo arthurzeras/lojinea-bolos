@@ -4,14 +4,14 @@ export default [
     name: 'Morango com chocolate',
     id: '700572ab43e042e7bf0c12597d657f491b9114b5',
     image: 'https://preview.redd.it/l5ri75qwfnb51.jpg?width=640&crop=smart&auto=webp&s=9c406d1c068889ab4fa25332e4d9a742edf7351a',
-    post: 'https://www.reddit.com/r/cake/comments/htbv2k/my_fiancee_made_this_for_her_2_yr_old_nephew_he/?utm_source=share&utm_medium=web2x',
+    post: 'https://www.reddit.com/r/cake/comments/htk8zr/three_layer_strawberry_cake_with_raspberry_icing/?utm_source=share&utm_medium=web2x',
   },
   {
     price: 99.99,
     name: 'Doguineos',
     id: '0be45da46960250197f8c8a49bdae8744f1e8dab',
     image: 'https://preview.redd.it/xr3zdrfz4kb51.jpg?width=640&crop=smart&auto=webp&s=0b1cca5878ae87a28b151f7710714fbf2c7778d7',
-    post: 'https://www.reddit.com/r/cake/comments/htk8zr/three_layer_strawberry_cake_with_raspberry_icing/?utm_source=share&utm_medium=web2x',
+    post: 'https://www.reddit.com/r/cake/comments/htbv2k/my_fiancee_made_this_for_her_2_yr_old_nephew_he/?utm_source=share&utm_medium=web2x',
   },
   {
     price: 62.90,
