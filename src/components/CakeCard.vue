@@ -2,9 +2,11 @@
   <div>
     <div class="card cake-card">
       <div class="card-image">
-        <figure class="image">
-          <img :src="cake.image" alt="Placeholder image">
-        </figure>
+        <a :href="cake.post" target="_blank">
+          <figure class="image">
+            <img :src="cake.image" alt="Placeholder image">
+          </figure>
+        </a>
       </div>
       <div class="card-content" :title="cake.name">
         <div class="media">
@@ -16,7 +18,7 @@
 
         <div class="content">
           <button class="button is-primary is-rounded" @click="addToBasket()">
-            Adicionar a cesta
+            Adicionar à cesta
           </button>
         </div>
       </div>
@@ -25,9 +27,11 @@
     <div class="box">
       <article class="media">
         <div class="media-left">
-          <figure class="image">
-            <img :src="cake.image" alt="Image">
-          </figure>
+          <a :href="cake.post" target="_blank">
+            <figure class="image">
+              <img :src="cake.image" alt="Image">
+            </figure>
+          </a>
         </div>
         <div class="media-content">
           <div class="content">
@@ -79,10 +83,14 @@ export default {
 
       const notification = {
         visible: true,
-        message: `${this.cake.name} adicionado à sacola`,
+        message: `${this.cake.name} adicionado à cesta`,
       };
 
       Store.mutations.MutateNotification(notification);
+    },
+
+    redirectToRedditPost() {
+      window.open(this.cake.post, '_blank');
     },
   },
 };
@@ -96,7 +104,8 @@ export default {
     img {
       height: 100%;
       object-fit: cover;
-      border-radius: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
     }
   }
 }
