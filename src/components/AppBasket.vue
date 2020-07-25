@@ -27,6 +27,10 @@ export default {
     active() {
       return Store.state.basket;
     },
+
+    basketList() {
+      return Store.state.basketList;
+    },
   },
 
   methods: {
