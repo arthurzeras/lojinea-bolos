@@ -43,7 +43,7 @@ export default {
 <style lang="scss">
 .home {
   overflow-y: auto;
-  height: calc(100vh - 168px);
+  height: calc(100vh - 176px);
   .container {
     padding-left: 0.75rem;
     padding-right: 0.75rem;

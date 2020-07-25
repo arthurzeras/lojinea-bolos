@@ -1,7 +1,7 @@
 <template>
   <div class="notification is-primary" v-if="state.visible">
     <button class="delete" @click="close()"></button>
-    <div v-html="state.message" class="has-text-dark"></div>
+    <div v-html="state.message"></div>
   </div>
 </template>
 
