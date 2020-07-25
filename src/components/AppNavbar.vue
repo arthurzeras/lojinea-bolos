@@ -11,7 +11,7 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-light">
+          <a class="button is-light" @click="openBasket()">
             <span class="icon">
               <img src="@/assets/img/cesta.svg" alt="cesta">
             </span>
@@ -24,7 +24,15 @@
 </template>
 
 <script>
+import Store from '@/store';
+
 export default {
   name: 'AppNavbar',
+
+  methods: {
+    openBasket() {
+      Store.mutations.MutateBasket(true);
+    },
+  },
 };
 </script>
