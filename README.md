@@ -1,4 +1,4 @@
-# Lojinea de Bolos (Little cake Store)
+# Lojinea de Bolos (Cakes Little Store)
 
 List cakes images from [r/cake](https://www.reddit.com/r/cake/) on Reddit, set a imaginary price and manage shopping basket, saving items on browser local storage.
 
