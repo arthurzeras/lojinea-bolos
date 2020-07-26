@@ -4,6 +4,8 @@
       <p>
         <strong>Lojinea de bolos 🍰</strong> by
         <a href="https://github.com/arthurzeras" target="_blank" rel="noopener noreferrer">Arthur Oliveira</a>
+        |
+        <a href="https://github.com/arthurzeras/lojinea-bolos" target="_blank" rel="noopener noreferrer">Source</a>
       </p>
       <div>
         Ícones feitos por
