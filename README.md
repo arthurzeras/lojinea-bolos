@@ -1,14 +1,23 @@
-# lojinea
+# Lojinea de Bolos (Little cake Store)
 
-## Project setup
-```
+List cakes images from [r/cake](https://www.reddit.com/r/cake/) on Reddit, set a imaginary price and manage shopping basket, saving items on browser local storage.
+
+> Note: Images are not displayed dynamically from reddit, they are on `src/datasets`
+
+### Live View
+[arthurzeras.github.io/lojinea-bolos](https://arthurzeras.github.io/lojinea-bolos/)
+
+### Project setup
+
+> Node v.12+
+
+```bash
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
+
+Open your browser on `localhost:8080/lojinea-bolos/`
+
 
 ### Compiles and minifies for production
 ```
@@ -20,5 +29,5 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Credits
+Icons from [Flaticon](https://www.flaticon.com) ([Skyclick](https://www.flaticon.com/br/icone-gratis/bolo_901688) and [Freepik](http://www.freepik.com/))
