@@ -99,6 +99,7 @@ export default {
 
     img {
       height: 100%;
+      cursor: pointer;
       object-fit: cover;
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
@@ -125,6 +126,7 @@ export default {
 
         img {
           height: 100%;
+          cursor: pointer;
           object-fit: cover;
           border-radius: 10px;
         }
